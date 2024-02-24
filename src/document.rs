@@ -519,7 +519,7 @@ impl Document {
                 "MacRomanEncoding" => bytes_to_string(encodings::MAC_ROMAN_ENCODING, bytes),
                 "MacExpertEncoding" => bytes_to_string(encodings::MAC_EXPERT_ENCODING, bytes),
                 "WinAnsiEncoding" => bytes_to_string(encodings::WIN_ANSI_ENCODING, bytes),
-                "UniGB-UCS2-H" | "UniGB−UTF16−H" => UTF_16BE.decode(bytes).0.to_string(),
+                "UniGB-UCS2-H" | "UniGB−UTF16−H" | "UniJIS-UCS2-H" | "UniJIS-UTF16-H" => UTF_16BE.decode(bytes).0.to_string(),
                 "Identity-H" => "?Identity-H Unimplemented?".to_string(), // Unimplemented
                 _ => String::from_utf8_lossy(bytes).to_string(),
             }
